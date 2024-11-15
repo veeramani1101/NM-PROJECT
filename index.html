@@ -1,0 +1,183 @@
+  <!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Student Enrollment</title>
+</head>
+
+<body onload="pageAnimation()">
+  <div class="d-flex flex-column">
+    <!-- Header  -->
+    <header class="d-flex align-items-center justify-content-center heading">
+      <h2 class="text-light font-weight-bold">Student Enrollment Form</h2>
+    </header>
+
+    <!-- main section -->
+    <main class="container-fluid flex-grow-1">
+      <div class="row">
+        <!-- form section -->
+        <div class="col-12 col-lg-5 mb-5">
+          <div class="container mx-lg-5">
+            <form method="POST" action="#" onsubmit="onSubmit(); return false">
+              <!-- Input Name -->
+              <div class="form-group row">
+                <label for="inputName" class="col-12 col-md-4 py-1">Name</label>
+                <input type="text" class="form-control col-12 col-md-8" id="inputName" name="name"
+                  aria-describedby="Name" placeholder="Enter Name" required />
+              </div>
+
+              <!-- Input Email -->
+              <div class="form-group row">
+                <label for="inputEmail" class="col-12 col-md-4 py-1">Email</label>
+                <input type="email" class="form-control col-12 col-md-8" id="inputEmail" name="email" required
+                  aria-describedby="Email" placeholder="Enter Email" />
+              </div>
+
+              <!-- Input website -->
+              <div class="form-group row">
+                <label for="inputWebsite" class="col-12 col-md-4 py-1">Website</label>
+                <input type="text" class="form-control col-12 col-md-8" id="inputWebsite" name="website"
+                  aria-describedby="Website" placeholder="Enter Website link" required />
+              </div>
+
+              <!-- Input Image Link -->
+              <!-- Input Image File -->
+                <div class="form-group row">
+                  <label for="inputImageFile" class="col-12 col-md-4 py-1">Image</label>
+                  <input type="file" class="form-control-file col-12 col-md-8" id="inputImageFile" name="imageFile" accept="image/*" required />
+                </div>
+
+
+              <!-- Input Gender -->
+              <div class="form-group row">
+                <label for="inputGender" class="col-12 col-md-4 py-1">Gender</label>
+                <div class="col-12 col-md-8 row">
+                  <div class="form-check col-6 col-md-12">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male" checked />
+                    <label class="form-check-label" for="exampleRadios1">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check col-6 col-md-12">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="Female" />
+                    <label class="form-check-label" for="exampleRadios2">
+                      Female
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input Skills -->
+              <div class="form-group row">
+                <label for="inputSkills" class="col-12 col-md-4">Skills</label>
+                <div class="
+                  col-12 col-md-8
+                  row
+                  d-flex
+                  justify-content-between
+                  flex-wrap ">
+                  <div class="form-check">
+                    <input class="form-check-input mb-2" type="checkbox" value="Java" name="skills" id="inputJava"
+                      checked />
+                    <label class="form-check-label" for="InputJava">
+                      Java
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input mb-2" type="checkbox" value="HTML" name="skills" id="inputHTML" />
+                    <label class="form-check-label" for="InputJava">
+                      HTML
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input mb-2" type="checkbox" value="CSS" name="skills" id="inputCSS" />
+                    <label class="form-check-label" for="InputCSS">
+                      CSS
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <button type="submit" class="btn btn-primary px-3 py-2 mx-2">
+                  Enroll Student
+                </button>
+                <button type="reset" class="btn btn-danger px-3 py-2 mx-2">
+                  Clear
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- seprator -->
+        <!-- This one is for before responsive seprator -->
+        <div class="col-lg-2 d-none d-lg-flex mr-lg-n5">
+          <div class="container d-flex align-items-center justify-content-center">
+            <div class="separator"></div>
+          </div>
+        </div>
+
+        <!-- This one is for after responsive seprator which is not shown in large display-->
+        <div class="col-12 d-lg-none d-flex">
+          <div class="container d-flex align-items-center justify-content-center">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <!-- Enrolled Section -->
+        <div class="enrolled-section col-12 col-lg-5 mt-5 ml-xl-n4">
+            <h3 class="mt-5">Enrolled Students will appear here!</h3>
+          </div>
+        </div>
+
+        <template>
+          <div class="container">
+            <h3 class="text-dark text-center mb-5 font-weight-bold">
+              Enrolled Student
+            </h3>
+            <div class="d-flex flex-column justify-content-center">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th class="text-white">Description</th>
+                    <th class="text-white">Image</th>
+                  </tr>
+                </thead>
+                <tbody id="table-data"></tbody>
+              </table>
+            </div>
+          </div>
+        </template>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="d-flex align-items-center justify-content-center w-100 text">
+      <h5 class="text-white font-weight-bold">
+        Copyright &copy; 2024-2025 by uv 
+      </h5>
+    </footer>
+  </div>
+  <!-- Custome Script -->
+  <script src="index.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

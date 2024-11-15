@@ -1,0 +1,128 @@
+/* used for declaring the global css variable */
+:root {
+    --color-primary: #46d7ac;
+    --color-divider: #81ceb6;
+    --row-even: #ebf2d3;
+    --row-odd: #fffdff;
+    font-size: 16px;
+  }
+  
+  /* it changes font size when width is exced to 576px */
+  @media only screen and (max-width: 576px) {
+    :root {
+      font-size: 14px;
+    }
+  }
+  
+  /* before and after executing of program this will run */
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    opacity: 0;
+    animation: fadeIn 2s;
+    height: 80vh;
+  }
+  
+
+/* it defines the gap between two lines */
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+  }
+  
+  /* 1rem = 16px; margin all side around main container which contains form*/
+  main {
+    margin: 4.4rem auto;
+  }
+  
+  .heading {
+    background-color: var(--color-primary);
+    min-height: 10vh;
+    padding: 1rem;
+  }
+  
+  .separator {
+    width: 1px;
+    height: 70vh;
+    background-color: var(--color-divider);
+  }
+  
+  .divider {
+    background-color: var(--color-divider);
+    width: 100%;
+    height: 2px;
+  }
+  
+  .enrolled-section {
+    max-height: 33rem;
+    overflow-y: auto;
+  }
+  
+  /* it provide alternate white and cream color for multiple row in student enrolled section */
+  .table-striped > tbody > tr:nth-child(even) > td {
+    background-color: var(--row-even);
+  }
+  .table-striped > tbody > tr:nth-child(odd) > td {
+    background-color: var(--row-odd);
+  }
+  
+  .table-bordered > thead > tr > th,
+  .table-bordered > tbody > tr > td {
+    border: 2px solid #a0be44;
+  }
+  
+  thead {
+    background-color: #a7c93f;
+  }
+  
+  thead > tr > th,
+  td {
+    padding: 0.25rem 0.5rem !important;
+  }
+  
+  /* it helps to add the new row in table with animation */
+  #table-data > tr {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+  }
+
+  /* @keyframes rule specifies the animation code. */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #table-data > tr > td:nth-child(even) {
+    width: 8.25rem !important;
+  }
+  
+  img {
+    width: 110px;
+    min-height: 120px;
+  }
+  
+  
+  
+  footer {
+    position: relative;
+    background-color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    bottom: 0;
+  }
+  
+  
+  
